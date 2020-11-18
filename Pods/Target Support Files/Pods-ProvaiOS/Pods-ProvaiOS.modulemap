@@ -1,0 +1,6 @@
+module Pods_ProvaiOS {
+  umbrella header "Pods-ProvaiOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

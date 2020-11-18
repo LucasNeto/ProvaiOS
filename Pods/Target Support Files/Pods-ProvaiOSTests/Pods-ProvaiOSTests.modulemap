@@ -1,0 +1,6 @@
+module Pods_ProvaiOSTests {
+  umbrella header "Pods-ProvaiOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
