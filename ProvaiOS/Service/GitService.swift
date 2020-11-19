@@ -1,5 +1,5 @@
 //
-//  IssueService.swift
+//  GitService.swift
 //  ProvaiOS
 //
 //  Created by Lucas  N Santana on 09/06/20.
@@ -7,10 +7,11 @@
 //
 
 import Alamofire
-protocol IssueServiceProtocol {
+
+protocol GitServiceProtocol {
     func doRequest<T:Codable>( _ request: BaseRequest, completion: @escaping((T?,ServiceError?)->()))
 }
-class IssueService: IssueServiceProtocol {
+class GitService: GitServiceProtocol {
     func doRequest<T:Codable>( _ request: BaseRequest, completion: @escaping((T?,ServiceError?)->())){
         let url = request.url
         Alamofire.request(url).responseData { (response) in

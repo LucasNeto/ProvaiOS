@@ -8,7 +8,6 @@
 
 class ServiceError: Error {
     
-    
     func getMessage() -> String {
         return "Estamos com problemas, tente novamente mais tarde."
     }
