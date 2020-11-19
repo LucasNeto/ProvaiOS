@@ -7,10 +7,13 @@
 //
 
 class ListRepoRequest: BaseRequest {
+    var page: Int
+    init(page: Int){
+        self.page = page
+    }
     var url: String {
         get {
-//            return "https://api.github.com/repos/apple/swift/issues"
-            return "https://api.github.com/search/repositories?q=language:swift&sort=stars"
+            return "https://api.github.com/search/repositories?q=language:swift&per_page=30&page=\(page)"
         }
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 protocol ListRepoTableViewControllerProtocol {
     func displayRepos(_ viewModel: ListRepoModel.ViewModel)
     func displayError(_ message: String)
+    func showLoading()
+    func hideLoading()
 }
 class ListRepoTableViewController: UITableViewController, ListRepoTableViewControllerProtocol {
 
@@ -21,7 +23,6 @@ class ListRepoTableViewController: UITableViewController, ListRepoTableViewContr
         super.viewDidLoad()
         setup()
         setupTableView()
-        self.tableView.refreshControl?.beginRefreshing()
         self.interactor?.getRepos()
     }
     
@@ -43,7 +44,6 @@ class ListRepoTableViewController: UITableViewController, ListRepoTableViewContr
     // MARK: - ListRepoTableViewControllerProtocol
     func displayRepos(_ viewModel: ListRepoModel.ViewModel) {
         self.itens = viewModel.list
-        self.tableView.refreshControl?.endRefreshing()
         self.tableView.reloadData()
     }
     func displayError(_ message: String){
@@ -53,6 +53,12 @@ class ListRepoTableViewController: UITableViewController, ListRepoTableViewContr
         }))
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         self.present(alert,animated: true)
+    }
+    func showLoading(){
+        self.tableView.refreshControl?.beginRefreshing()
+    }
+    func hideLoading(){
+        self.tableView.refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source
@@ -68,6 +74,11 @@ class ListRepoTableViewController: UITableViewController, ListRepoTableViewContr
         let item = self.itens[indexPath.row]
         cell.setup(item)
         return cell
+    }
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row > self.itens.count-5 {
+            self.interactor?.getRepos()
+        }
     }
     @objc func refresh(sender:AnyObject) {
         self.interactor?.getRepos()

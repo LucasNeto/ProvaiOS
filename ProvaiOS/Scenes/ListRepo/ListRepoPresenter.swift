@@ -10,6 +10,8 @@ import UIKit
 protocol ListRepoPresenterProtocol {
     func presentListRepo(list: [RepoItem])
     func presentError(error: String)
+    func showLoading()
+    func hideLoading()
 }
 
 class ListRepoPresenter : ListRepoPresenterProtocol {
@@ -37,5 +39,12 @@ class ListRepoPresenter : ListRepoPresenterProtocol {
                                              imageUrl: img,
                                              authorName: authorName)
         }
+    }
+    func showLoading(){
+        self.viewController?.showLoading()
+    }
+    
+    func hideLoading(){
+        self.viewController?.hideLoading()
     }
 }

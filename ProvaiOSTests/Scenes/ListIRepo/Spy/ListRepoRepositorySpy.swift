@@ -12,7 +12,7 @@ class ListRepoRepositorySpy : ListRepoRepositoryProtocol {
     var getReposCalled = false
     var shouldReturnSuccess = true
     
-    func getRepos(completion: @escaping ((Result<[RepoItem], ServiceError>)->())) {
+    func getRepos(page: Int, completion: @escaping ((Result<[RepoItem], ServiceError>)->())) {
         getReposCalled = true
         if shouldReturnSuccess {
             completion(.success(ListRepoModelMock.list))

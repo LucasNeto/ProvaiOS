@@ -7,14 +7,14 @@
 //
 
 protocol ListRepoRepositoryProtocol {
-    func getRepos(completion: @escaping ((Result<[RepoItem], ServiceError>)->()))
+    func getRepos(page: Int, completion: @escaping ((Result<[RepoItem], ServiceError>)->()))
 }
 class ListRepoRepository: ListRepoRepositoryProtocol {
     
     private var service:GitServiceProtocol = GitService()
     
-    func getRepos(completion: @escaping ((Result<[RepoItem], ServiceError>)->())) {
-        let request = ListRepoRequest()
+    func getRepos(page: Int, completion: @escaping ((Result<[RepoItem], ServiceError>)->())) {
+        let request = ListRepoRequest(page: page)
         service.doRequest(request) { (response:Repos?, error) in
             if let response = response {
                 completion(.success(response.items ?? []))

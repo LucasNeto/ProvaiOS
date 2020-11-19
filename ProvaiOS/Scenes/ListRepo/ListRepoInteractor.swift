@@ -17,13 +17,14 @@ protocol ListRepoInteractorProtocol {
 }
 
 protocol ListRepoDataStore {
-    var listRepos: [RepoItem]? { get set }
+    var listRepos: [RepoItem] { get set }
 }
 
 class ListRepoInteractor: ListRepoInteractorProtocol, ListRepoDataStore {
     var presenter: ListRepoPresenterProtocol?
     var repository: ListRepoRepositoryProtocol?
-    var listRepos: [RepoItem]?
+    var listRepos: [RepoItem] = []
+    private var page = 1
     
     init(repository: ListRepoRepositoryProtocol, presenter: ListRepoPresenterProtocol){
         self.repository = repository
@@ -32,11 +33,14 @@ class ListRepoInteractor: ListRepoInteractorProtocol, ListRepoDataStore {
     
     // MARK: get Repos
     func getRepos() {
-        self.repository?.getRepos(completion: { (result) in
+        self.presenter?.showLoading()
+        self.repository?.getRepos(page: page, completion: { (result) in
+            self.presenter?.hideLoading()
             switch result{
             case .success(let list):
-                self.listRepos = list
-                self.presenter?.presentListRepo(list: list)
+                self.page += 1
+                self.listRepos += list
+                self.presenter?.presentListRepo(list: self.listRepos)
                 break
             case .failure(let error):
                 self.presenter?.presentError(error: error.getMessage())
