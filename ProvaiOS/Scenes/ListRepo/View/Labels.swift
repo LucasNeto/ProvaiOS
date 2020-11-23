@@ -19,11 +19,6 @@ class DescriptionLabel : BaseLabel {
     }
 }
 class BaseLabel : UILabel {
-    var newFont: UIFont? {
-        didSet {
-            setupFont()
-        }
-    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupFont()
@@ -34,6 +29,6 @@ class BaseLabel : UILabel {
         setupFont()
     }
     open func setupFont(){
-        font = UIFont(name: "HelveticaNeue-Bold", size: 18)
+        font = UIFont.boldSystemFont(ofSize: font.pointSize)
     }
 }
