@@ -16,7 +16,6 @@
 		D70307262490325600AAE082 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D70307252490325600AAE082 /* Podfile */; };
 		D703072A249033AE00AAE082 /* ListRepoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7030729249033AE00AAE082 /* ListRepoTableViewController.swift */; };
 		D703072E249033D700AAE082 /* ListRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D703072C249033D700AAE082 /* ListRepoTableViewCell.swift */; };
-		D703072F249033D700AAE082 /* ListRepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D703072D249033D700AAE082 /* ListRepoTableViewCell.xib */; };
 		D7030732249034BD00AAE082 /* GitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7030731249034BD00AAE082 /* GitService.swift */; };
 		D7030734249034E900AAE082 /* ListRepoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7030733249034E900AAE082 /* ListRepoRepository.swift */; };
 		D70307362490352500AAE082 /* ListRepoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70307352490352500AAE082 /* ListRepoPresenter.swift */; };
@@ -35,6 +34,8 @@
 		D7075C8F25660D4100283A45 /* ListRepoInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7075C8E25660D4100283A45 /* ListRepoInteractorSpy.swift */; };
 		D7075C9125660E9300283A45 /* ListRepoInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7075C9025660E9300283A45 /* ListRepoInteractorTests.swift */; };
 		D7075C9325660F0B00283A45 /* ListRepoPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7075C9225660F0B00283A45 /* ListRepoPresenterSpy.swift */; };
+		D7075C95256B5F9100283A45 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7075C94256B5F9100283A45 /* UIView+Extension.swift */; };
+		D7075C97256B677A00283A45 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7075C96256B677A00283A45 /* Labels.swift */; };
 		D7656E5D2565EBFD00D1663B /* Repos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7656E5C2565EBFD00D1663B /* Repos.swift */; };
 		D7656E602565F32900D1663B /* ListRepoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7656E5F2565F32900D1663B /* ListRepoInteractor.swift */; };
 /* End PBXBuildFile section */
@@ -67,7 +68,6 @@
 		D70307252490325600AAE082 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D7030729249033AE00AAE082 /* ListRepoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoTableViewController.swift; sourceTree = "<group>"; };
 		D703072C249033D700AAE082 /* ListRepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoTableViewCell.swift; sourceTree = "<group>"; };
-		D703072D249033D700AAE082 /* ListRepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListRepoTableViewCell.xib; sourceTree = "<group>"; };
 		D7030731249034BD00AAE082 /* GitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitService.swift; sourceTree = "<group>"; };
 		D7030733249034E900AAE082 /* ListRepoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoRepository.swift; sourceTree = "<group>"; };
 		D70307352490352500AAE082 /* ListRepoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPresenter.swift; sourceTree = "<group>"; };
@@ -86,6 +86,8 @@
 		D7075C8E25660D4100283A45 /* ListRepoInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoInteractorSpy.swift; sourceTree = "<group>"; };
 		D7075C9025660E9300283A45 /* ListRepoInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoInteractorTests.swift; sourceTree = "<group>"; };
 		D7075C9225660F0B00283A45 /* ListRepoPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoPresenterSpy.swift; sourceTree = "<group>"; };
+		D7075C94256B5F9100283A45 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		D7075C96256B677A00283A45 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		D7656E5C2565EBFD00D1663B /* Repos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repos.swift; sourceTree = "<group>"; };
 		D7656E5F2565F32900D1663B /* ListRepoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				D703072C249033D700AAE082 /* ListRepoTableViewCell.swift */,
-				D703072D249033D700AAE082 /* ListRepoTableViewCell.xib */,
+				D7075C96256B677A00283A45 /* Labels.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				D703074F24906C4200AAE082 /* UIImageView+Extension.swift */,
+				D7075C94256B5F9100283A45 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -350,7 +353,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70307102490321000AAE082 /* LaunchScreen.storyboard in Resources */,
-				D703072F249033D700AAE082 /* ListRepoTableViewCell.xib in Resources */,
 				D703074D24906B9400AAE082 /* Main.storyboard in Resources */,
 				D703070D2490321000AAE082 /* Assets.xcassets in Resources */,
 				D70307262490325600AAE082 /* Podfile in Resources */,
@@ -420,6 +422,7 @@
 			files = (
 				D7656E602565F32900D1663B /* ListRepoInteractor.swift in Sources */,
 				D70307362490352500AAE082 /* ListRepoPresenter.swift in Sources */,
+				D7075C95256B5F9100283A45 /* UIView+Extension.swift in Sources */,
 				D703074024904EDC00AAE082 /* ListRepoModel.swift in Sources */,
 				D703072A249033AE00AAE082 /* ListRepoTableViewController.swift in Sources */,
 				D703072E249033D700AAE082 /* ListRepoTableViewCell.swift in Sources */,
@@ -428,6 +431,7 @@
 				D7030734249034E900AAE082 /* ListRepoRepository.swift in Sources */,
 				D7030738249036AC00AAE082 /* ServiceError.swift in Sources */,
 				D703073E2490397F00AAE082 /* BaseRequest.swift in Sources */,
+				D7075C97256B677A00283A45 /* Labels.swift in Sources */,
 				D70307062490320F00AAE082 /* SceneDelegate.swift in Sources */,
 				D7656E5D2565EBFD00D1663B /* Repos.swift in Sources */,
 				D703073C2490376E00AAE082 /* ListRepoRequest.swift in Sources */,

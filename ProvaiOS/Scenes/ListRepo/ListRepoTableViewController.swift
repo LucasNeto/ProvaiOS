@@ -34,7 +34,7 @@ class ListRepoTableViewController: UITableViewController, ListRepoTableViewContr
         
     }
     private func setupTableView(){
-        self.tableView.register(UINib(nibName: ListRepoTableViewCell.nibName, bundle: .main), forCellReuseIdentifier: reusableID)
+        self.tableView.register(ListRepoTableViewCell.self, forCellReuseIdentifier: reusableID)
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         self.tableView.refreshControl = refreshControl
@@ -72,7 +72,10 @@ class ListRepoTableViewController: UITableViewController, ListRepoTableViewContr
             return UITableViewCell()
         }
         let item = self.itens[indexPath.row]
-        cell.setup(item)
+        cell.title = item.name
+        cell.author = item.authorName
+        cell.starsText = "\(item.starsCount)"
+        cell.authorUrl = item.imageUrl
         return cell
     }
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
